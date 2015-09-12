@@ -1,0 +1,14 @@
+http://www.biomedcentral.com/content/pdf/1471-2105-14-184.pdf
+
+Bowtie starts by building an FM-index for the reference genome and then uses the modified Ferragina and Manzini matching algorithm to find the mapping location. There are two main versions of Bowtie namely Bowtie and Bowtie 2. Bowtie 2 is mainly designed to handle reads longer than 50 bps. Additionally, Bowtie 2 supports features not handled by Bowtie.
+
+The BWA tool uses the Ferragina and Manzini matching algorithm to find exact matches, similar to Bowtie. To find inexact matches, the authors provided a new backtracking algorithm that searches for matches between substring of the reference genome and the query within a certain defined distance.
+
+In addition to providing different mapping techniques, each tool handles only a subset of the DNA sequences and the sequencing technologies features. Moreover, there are differences in the way the features are handled, which are summarized in Table 1. For instance, BWA, SOAP, and GSNAP accept or reject an alignment based on counting the number of mismatches between the read and the corresponding genomic position. On the other hand, Bowtie, MAQ, and Novoalign use a quality threshold (i.e., alignment score) to perform the same function. The quality threshold is different from the mapping quality. The former is the probability of the occurrence of the read sequence given an alignment location while the latter is the Bayesian posterior probability for the correctness of the alignment location calculated from all of the alignments found for the read.
+
+
+
+Another material:
+
+Among their differences is that bowtie (while smokin’ fast) does not deal with “gapped” alignments, i.e. it does not handle insertion/deletions well.
+
